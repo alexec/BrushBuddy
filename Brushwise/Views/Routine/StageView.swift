@@ -145,8 +145,7 @@ struct StageView: View {
     }
 
     private func timedControls(stage: BrushingStage) -> some View {
-        let isLastStep = engine.stepIndex >= stage.steps.count - 1
-        return HStack {
+        HStack {
             Color.clear.frame(width: 56, height: 56)
             Spacer()
             Button {
@@ -158,21 +157,9 @@ struct StageView: View {
             .buttonStyle(RoundButtonStyle(color: stage.color, size: 76))
             .accessibilityLabel(engine.isPaused ? "Resume" : "Pause")
             Spacer()
-            Menu {
-                Button {
-                    Haptics.tap()
-                    engine.skipStep()
-                } label: {
-                    Label(isLastStep ? "Finish this stage" : "Skip this step", systemImage: "forward.fill")
-                }
-                if !isLastStep {
-                    Button {
-                        Haptics.tap()
-                        engine.skipStage()
-                    } label: {
-                        Label("Skip rest of \(stage.title.lowercased())", systemImage: "forward.end.fill")
-                    }
-                }
+            Button {
+                Haptics.tap()
+                engine.skipStage()
             } label: {
                 Image(systemName: "forward.fill")
                     .font(.system(size: 18, weight: .bold))
@@ -181,7 +168,8 @@ struct StageView: View {
                     .background(Theme.surfaceRaised, in: Circle())
                     .overlay(Circle().strokeBorder(Theme.stroke))
             }
-            .accessibilityLabel("Skip options")
+            .accessibilityLabel("Skip \(stage.title.lowercased())")
+            .accessibilityHint("Finishes this stage now")
         }
         .padding(.horizontal, 36)
     }
