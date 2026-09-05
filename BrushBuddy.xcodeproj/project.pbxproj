@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A625CF1F91B47B152E62509 /* StageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541710CB73205033FCD1E254 /* StageView.swift */; };
+		1F1C98A21E6AC9DA85ED1C25 /* WaterPickAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF871F6F8DB5FBB208B2C9F0 /* WaterPickAnimation.swift */; };
+		1FA63C8CCFF25A2D6C8FE12A /* RoutineEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26E1BC2A4275331E104074D /* RoutineEngine.swift */; };
+		22E5894141FE099069A4B7B4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2A3D91D7FF2D816C08191A /* SettingsView.swift */; };
+		247E9CAC163467A234016271 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665B6572EE0AC161B212B315 /* NotificationManager.swift */; };
+		294B39B46DBAB29EB550641A /* RoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB57441C7C3471E27B0E5D08 /* RoutineView.swift */; };
+		2A266D0EDA85E273736C3582 /* DentalAdvice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724E0E7EEEA4CCBB89B1493D /* DentalAdvice.swift */; };
+		5CBCF4F5A43DB410C08609AA /* FlossAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E1C4FAD9C9F9E65E0A7CB6 /* FlossAnimation.swift */; };
+		5E48C3B5D8ABE99F194A444F /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C7AC20B0067C19A90BEC8 /* SoundPlayer.swift */; };
+		62C4F8A2FA7CD4BE8897664A /* ToothbrushHeadIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E5292DC057968D378EC074 /* ToothbrushHeadIllustration.swift */; };
+		74FF58DC495074C1270D7282 /* ToothbrushCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D99B61C7ACF2EB9B02AC63 /* ToothbrushCheckView.swift */; };
+		76E5861E0EC4098F5EDDF7EC /* MouthShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDE7E149F9E0CEED8ABBBD6 /* MouthShapes.swift */; };
+		77E13056DC898366569249CA /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7454B7DFAEA8A6F165201683 /* Haptics.swift */; };
+		7A98A8A0C05C9F8CC26B831D /* WeekHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EF72C581FA558A3A57AA4B /* WeekHistoryView.swift */; };
+		7A99EF241C0DE3F2DA491EC3 /* BrushAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E595F9FF7E47CB8B147272 /* BrushAnimation.swift */; };
+		81631027D32D9EEE0C5B6E72 /* BrushStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30754A41645822ECD5D1123E /* BrushStore.swift */; };
+		835248EFD1E58FF46B0E64BD /* BrushBuddyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B96BA0B4A5E48403B40DF3 /* BrushBuddyTests.swift */; };
+		94F177E2E40859669689A581 /* StageCompleteOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A971985A15F6BD3DAF196 /* StageCompleteOverlay.swift */; };
+		9513C5E904164C4153F8B6F1 /* RoutineCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991BAAAC2B51C19925946863 /* RoutineCompleteView.swift */; };
+		AD15B03D3045FF75E148F96D /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA94267ADB3E3CF00A711FF /* AppSettings.swift */; };
+		B52023A419D3AD233DE19209 /* MouthwashAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC24BF61BD9E6717A55F62 /* MouthwashAnimation.swift */; };
+		B6C65F0CA126FC3B748485CB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522D3EE4B2E907871F248CC7 /* HomeView.swift */; };
+		CD9E622B12A85521708C9A48 /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61021D4AB4F7EF449BA73602 /* HealthManager.swift */; };
+		CF5078A5D6DB118B69CEC105 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D64BEEBB826A37204F30D3 /* Theme.swift */; };
+		DCD733E188E277540DBB3D25 /* BrushBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1C67BADC761BD5CD2214DA /* BrushBuddyApp.swift */; };
+		E5F801FA7F95960F58ADE29D /* BrushingStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3128D75B06DE4FC958E53AA5 /* BrushingStage.swift */; };
+		EBE10F8A665D6BAEC477EE52 /* BrushingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B136DDCB1A777592B89CBA /* BrushingSession.swift */; };
+		F4B096174574FBD571744ED1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FFB4DF8D0DFCC28352301B3 /* Assets.xcassets */; };
+		F63B1931BBE488DEEF548A02 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC395D57541FC211532DAA7 /* Components.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		25C8F7DFD1ED356DD550AEB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 253E4DE8937921A592FFF459 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 81B03601A036A6E62C5F0C14;
+			remoteInfo = BrushBuddy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04B136DDCB1A777592B89CBA /* BrushingSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrushingSession.swift; sourceTree = "<group>"; };
+		08B96BA0B4A5E48403B40DF3 /* BrushBuddyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrushBuddyTests.swift; sourceTree = "<group>"; };
+		09DC24BF61BD9E6717A55F62 /* MouthwashAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MouthwashAnimation.swift; sourceTree = "<group>"; };
+		30754A41645822ECD5D1123E /* BrushStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrushStore.swift; sourceTree = "<group>"; };
+		3128D75B06DE4FC958E53AA5 /* BrushingStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrushingStage.swift; sourceTree = "<group>"; };
+		3643998DD86894D1D0AE6EFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3B2A3D91D7FF2D816C08191A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		45D99B61C7ACF2EB9B02AC63 /* ToothbrushCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToothbrushCheckView.swift; sourceTree = "<group>"; };
+		4FFB4DF8D0DFCC28352301B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		522D3EE4B2E907871F248CC7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		541710CB73205033FCD1E254 /* StageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageView.swift; sourceTree = "<group>"; };
+		58EF72C581FA558A3A57AA4B /* WeekHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekHistoryView.swift; sourceTree = "<group>"; };
+		61021D4AB4F7EF449BA73602 /* HealthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
+		665B6572EE0AC161B212B315 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		724E0E7EEEA4CCBB89B1493D /* DentalAdvice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentalAdvice.swift; sourceTree = "<group>"; };
+		7454B7DFAEA8A6F165201683 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
+		82D64BEEBB826A37204F30D3 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		843A971985A15F6BD3DAF196 /* StageCompleteOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageCompleteOverlay.swift; sourceTree = "<group>"; };
+		8B1C67BADC761BD5CD2214DA /* BrushBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrushBuddyApp.swift; sourceTree = "<group>"; };
+		8CC395D57541FC211532DAA7 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		98E5292DC057968D378EC074 /* ToothbrushHeadIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToothbrushHeadIllustration.swift; sourceTree = "<group>"; };
+		991BAAAC2B51C19925946863 /* RoutineCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineCompleteView.swift; sourceTree = "<group>"; };
+		9EDE7E149F9E0CEED8ABBBD6 /* MouthShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MouthShapes.swift; sourceTree = "<group>"; };
+		A59C7AC20B0067C19A90BEC8 /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		B6BEEBBC758DE116F2CAFBEB /* BrushBuddyTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BrushBuddyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBA94267ADB3E3CF00A711FF /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		BEBC33E5C5B828B40A14F670 /* BrushBuddy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BrushBuddy.entitlements; sourceTree = "<group>"; };
+		BF871F6F8DB5FBB208B2C9F0 /* WaterPickAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterPickAnimation.swift; sourceTree = "<group>"; };
+		E26E1BC2A4275331E104074D /* RoutineEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineEngine.swift; sourceTree = "<group>"; };
+		E9E595F9FF7E47CB8B147272 /* BrushAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrushAnimation.swift; sourceTree = "<group>"; };
+		F7A136E6ADC1588DBC7971CD /* BrushBuddy.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BrushBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7E1C4FAD9C9F9E65E0A7CB6 /* FlossAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlossAnimation.swift; sourceTree = "<group>"; };
+		FB57441C7C3471E27B0E5D08 /* RoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		1F993A5300737B6DF25C3A72 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4FFB4DF8D0DFCC28352301B3 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		27B8B775CD02A8A3FD0E28CC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8CC395D57541FC211532DAA7 /* Components.swift */,
+				522D3EE4B2E907871F248CC7 /* HomeView.swift */,
+				3B2A3D91D7FF2D816C08191A /* SettingsView.swift */,
+				82D64BEEBB826A37204F30D3 /* Theme.swift */,
+				58EF72C581FA558A3A57AA4B /* WeekHistoryView.swift */,
+				9B0D84AF57695E59579EA4F0 /* Animations */,
+				C5FB7ED8C18123E29F1C65C4 /* Routine */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2AA0AE5CC9596FFAF47C3DDB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7454B7DFAEA8A6F165201683 /* Haptics.swift */,
+				61021D4AB4F7EF449BA73602 /* HealthManager.swift */,
+				665B6572EE0AC161B212B315 /* NotificationManager.swift */,
+				A59C7AC20B0067C19A90BEC8 /* SoundPlayer.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2B52E6045EE598234C82657D /* BrushBuddyTests */ = {
+			isa = PBXGroup;
+			children = (
+				08B96BA0B4A5E48403B40DF3 /* BrushBuddyTests.swift */,
+			);
+			path = BrushBuddyTests;
+			sourceTree = "<group>";
+		};
+		366B2A533783370124E50720 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BBA94267ADB3E3CF00A711FF /* AppSettings.swift */,
+				04B136DDCB1A777592B89CBA /* BrushingSession.swift */,
+				3128D75B06DE4FC958E53AA5 /* BrushingStage.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		43E6448FAD0868ACABABC92C /* BrushBuddy */ = {
+			isa = PBXGroup;
+			children = (
+				BEBC33E5C5B828B40A14F670 /* BrushBuddy.entitlements */,
+				3643998DD86894D1D0AE6EFC /* Info.plist */,
+				CF5195C76CEF0756B461F392 /* App */,
+				8D71A47E6DC5CB2778728D62 /* Content */,
+				366B2A533783370124E50720 /* Models */,
+				1F993A5300737B6DF25C3A72 /* Resources */,
+				2AA0AE5CC9596FFAF47C3DDB /* Services */,
+				F58D09DA8DFC269CD8CBF3A8 /* Store */,
+				27B8B775CD02A8A3FD0E28CC /* Views */,
+			);
+			path = BrushBuddy;
+			sourceTree = "<group>";
+		};
+		8D71A47E6DC5CB2778728D62 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				724E0E7EEEA4CCBB89B1493D /* DentalAdvice.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		9B0D84AF57695E59579EA4F0 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				E9E595F9FF7E47CB8B147272 /* BrushAnimation.swift */,
+				F7E1C4FAD9C9F9E65E0A7CB6 /* FlossAnimation.swift */,
+				9EDE7E149F9E0CEED8ABBBD6 /* MouthShapes.swift */,
+				09DC24BF61BD9E6717A55F62 /* MouthwashAnimation.swift */,
+				98E5292DC057968D378EC074 /* ToothbrushHeadIllustration.swift */,
+				BF871F6F8DB5FBB208B2C9F0 /* WaterPickAnimation.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		9EB46E299494853A8E9C9A59 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F7A136E6ADC1588DBC7971CD /* BrushBuddy.app */,
+				B6BEEBBC758DE116F2CAFBEB /* BrushBuddyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C5FB7ED8C18123E29F1C65C4 /* Routine */ = {
+			isa = PBXGroup;
+			children = (
+				991BAAAC2B51C19925946863 /* RoutineCompleteView.swift */,
+				FB57441C7C3471E27B0E5D08 /* RoutineView.swift */,
+				843A971985A15F6BD3DAF196 /* StageCompleteOverlay.swift */,
+				541710CB73205033FCD1E254 /* StageView.swift */,
+				45D99B61C7ACF2EB9B02AC63 /* ToothbrushCheckView.swift */,
+			);
+			path = Routine;
+			sourceTree = "<group>";
+		};
+		CF5195C76CEF0756B461F392 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8B1C67BADC761BD5CD2214DA /* BrushBuddyApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		EA49DC96D16918B94E5F1169 = {
+			isa = PBXGroup;
+			children = (
+				43E6448FAD0868ACABABC92C /* BrushBuddy */,
+				2B52E6045EE598234C82657D /* BrushBuddyTests */,
+				9EB46E299494853A8E9C9A59 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F58D09DA8DFC269CD8CBF3A8 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				30754A41645822ECD5D1123E /* BrushStore.swift */,
+				E26E1BC2A4275331E104074D /* RoutineEngine.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1ED5C4D3B755AEBE0BAF94BE /* BrushBuddyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0386E062E9652A14355FD2D6 /* Build configuration list for PBXNativeTarget "BrushBuddyTests" */;
+			buildPhases = (
+				8ACCA37D03D1500CA72ADDD1 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E20B14E778FB5E2FDF56486A /* PBXTargetDependency */,
+			);
+			name = BrushBuddyTests;
+			packageProductDependencies = (
+			);
+			productName = BrushBuddyTests;
+			productReference = B6BEEBBC758DE116F2CAFBEB /* BrushBuddyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		81B03601A036A6E62C5F0C14 /* BrushBuddy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB9502E82AA23F0D130A9DCA /* Build configuration list for PBXNativeTarget "BrushBuddy" */;
+			buildPhases = (
+				835E21948888B0F9C6AF9216 /* Sources */,
+				52DA3AE740377DFED6843FB4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BrushBuddy;
+			packageProductDependencies = (
+			);
+			productName = BrushBuddy;
+			productReference = F7A136E6ADC1588DBC7971CD /* BrushBuddy.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		253E4DE8937921A592FFF459 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					81B03601A036A6E62C5F0C14 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D9D19DCB81C3017E42FB4528 /* Build configuration list for PBXProject "BrushBuddy" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = EA49DC96D16918B94E5F1169;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 9EB46E299494853A8E9C9A59 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				81B03601A036A6E62C5F0C14 /* BrushBuddy */,
+				1ED5C4D3B755AEBE0BAF94BE /* BrushBuddyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52DA3AE740377DFED6843FB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4B096174574FBD571744ED1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		835E21948888B0F9C6AF9216 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD15B03D3045FF75E148F96D /* AppSettings.swift in Sources */,
+				7A99EF241C0DE3F2DA491EC3 /* BrushAnimation.swift in Sources */,
+				DCD733E188E277540DBB3D25 /* BrushBuddyApp.swift in Sources */,
+				81631027D32D9EEE0C5B6E72 /* BrushStore.swift in Sources */,
+				EBE10F8A665D6BAEC477EE52 /* BrushingSession.swift in Sources */,
+				E5F801FA7F95960F58ADE29D /* BrushingStage.swift in Sources */,
+				F63B1931BBE488DEEF548A02 /* Components.swift in Sources */,
+				2A266D0EDA85E273736C3582 /* DentalAdvice.swift in Sources */,
+				5CBCF4F5A43DB410C08609AA /* FlossAnimation.swift in Sources */,
+				77E13056DC898366569249CA /* Haptics.swift in Sources */,
+				CD9E622B12A85521708C9A48 /* HealthManager.swift in Sources */,
+				B6C65F0CA126FC3B748485CB /* HomeView.swift in Sources */,
+				76E5861E0EC4098F5EDDF7EC /* MouthShapes.swift in Sources */,
+				B52023A419D3AD233DE19209 /* MouthwashAnimation.swift in Sources */,
+				247E9CAC163467A234016271 /* NotificationManager.swift in Sources */,
+				9513C5E904164C4153F8B6F1 /* RoutineCompleteView.swift in Sources */,
+				1FA63C8CCFF25A2D6C8FE12A /* RoutineEngine.swift in Sources */,
+				294B39B46DBAB29EB550641A /* RoutineView.swift in Sources */,
+				22E5894141FE099069A4B7B4 /* SettingsView.swift in Sources */,
+				5E48C3B5D8ABE99F194A444F /* SoundPlayer.swift in Sources */,
+				94F177E2E40859669689A581 /* StageCompleteOverlay.swift in Sources */,
+				1A625CF1F91B47B152E62509 /* StageView.swift in Sources */,
+				CF5078A5D6DB118B69CEC105 /* Theme.swift in Sources */,
+				74FF58DC495074C1270D7282 /* ToothbrushCheckView.swift in Sources */,
+				62C4F8A2FA7CD4BE8897664A /* ToothbrushHeadIllustration.swift in Sources */,
+				1F1C98A21E6AC9DA85ED1C25 /* WaterPickAnimation.swift in Sources */,
+				7A98A8A0C05C9F8CC26B831D /* WeekHistoryView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8ACCA37D03D1500CA72ADDD1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				835248EFD1E58FF46B0E64BD /* BrushBuddyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E20B14E778FB5E2FDF56486A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 81B03601A036A6E62C5F0C14 /* BrushBuddy */;
+			targetProxy = 25C8F7DFD1ED356DD550AEB5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0C7834F10FCE59CCF20FECAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		40D0562EC1892EBF69D0C1B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BrushBuddy/BrushBuddy.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = BrushBuddy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexcollins.brushbuddy;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		4936BD672FB5C7AF06DFE2DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexcollins.brushbuddy.tests;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BrushBuddy.app/BrushBuddy";
+			};
+			name = Debug;
+		};
+		A68E217FF249EBAD2AF9C332 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A6D363F1B10600D5D54C0B98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexcollins.brushbuddy.tests;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BrushBuddy.app/BrushBuddy";
+			};
+			name = Release;
+		};
+		B6035FBB0A5AFEC931A05EF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BrushBuddy/BrushBuddy.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = BrushBuddy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexcollins.brushbuddy;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0386E062E9652A14355FD2D6 /* Build configuration list for PBXNativeTarget "BrushBuddyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4936BD672FB5C7AF06DFE2DD /* Debug */,
+				A6D363F1B10600D5D54C0B98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D9D19DCB81C3017E42FB4528 /* Build configuration list for PBXProject "BrushBuddy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A68E217FF249EBAD2AF9C332 /* Debug */,
+				0C7834F10FCE59CCF20FECAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FB9502E82AA23F0D130A9DCA /* Build configuration list for PBXNativeTarget "BrushBuddy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40D0562EC1892EBF69D0C1B8 /* Debug */,
+				B6035FBB0A5AFEC931A05EF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 253E4DE8937921A592FFF459 /* Project object */;
+}
