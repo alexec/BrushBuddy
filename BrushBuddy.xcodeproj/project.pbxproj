@@ -268,7 +268,11 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					1ED5C4D3B755AEBE0BAF94BE = {
+						DevelopmentTeam = 6T4RVD5724;
+					};
 					81B03601A036A6E62C5F0C14 = {
+						DevelopmentTeam = 6T4RVD5724;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -392,6 +396,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = BrushBuddy/BrushBuddy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6T4RVD5724;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = BrushBuddy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -408,6 +413,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 6T4RVD5724;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -457,6 +463,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 6T4RVD5724;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -476,6 +483,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = BrushBuddy/BrushBuddy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6T4RVD5724;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = BrushBuddy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
