@@ -70,21 +70,20 @@ struct TipCarousel: View {
             let auto = Int(context.date.timeIntervalSinceReferenceDate / interval)
             let index = deck.isEmpty ? 0 : ((auto + manualOffset) % deck.count + deck.count) % deck.count
             if let tip = deck.indices.contains(index) ? deck[index] : nil {
-                HStack(alignment: .top, spacing: 14) {
+                HStack(alignment: .top, spacing: 10) {
                     Image(systemName: tip.symbol)
-                        .font(.title3.weight(.semibold))
+                        .font(.subheadline.weight(.semibold))
                         .foregroundStyle(tip.kind == .warning ? Theme.warn : color)
-                        .frame(width: 26)
+                        .frame(width: 20)
                         .padding(.top, 1)
                     Text(tip.text)
-                        .font(.body)
-                        .lineSpacing(3)
+                        .font(.footnote)
                         .foregroundStyle(Theme.text.opacity(0.85))
                         .fixedSize(horizontal: false, vertical: true)
                     Spacer(minLength: 0)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .glass(padding: 18, radius: 22)
+                .glass(padding: 12, radius: 18)
                 .id(tip.id)
                 .transition(.opacity)
                 .animation(.easeInOut(duration: 0.6), value: index)

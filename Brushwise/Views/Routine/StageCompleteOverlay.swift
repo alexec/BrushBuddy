@@ -37,10 +37,19 @@ struct StageCompleteOverlay: View {
                         Label(next.title, systemImage: next.symbol)
                             .font(.display(22, weight: .semibold))
                             .foregroundStyle(.white)
-                    } else {
+                    } else if engine.includesBrushCheck {
                         Label("Toothbrush check", systemImage: "checkmark.seal.fill")
                             .font(.display(22, weight: .semibold))
                             .foregroundStyle(.white)
+                    } else {
+                        Label("All done", systemImage: "checkmark.seal.fill")
+                            .font(.display(22, weight: .semibold))
+                            .foregroundStyle(.white)
+                    }
+                    // Mouthwash needs a cup poured first, so we wait for a tap
+                    // instead of counting down to it automatically.
+                    if engine.nextStage == .mouthwash {
+                        Text("Take your time getting it ready").font(.footnote).foregroundStyle(.white.opacity(0.7))
                     }
                 }
 
@@ -50,8 +59,10 @@ struct StageCompleteOverlay: View {
                 } label: {
                     HStack(spacing: 10) {
                         Text("Continue")
-                        ProgressRing(progress: 1 - engine.autoAdvanceRemaining / RoutineEngine.autoAdvanceDelay, color: stage.color, lineWidth: 3)
-                            .frame(width: 18, height: 18)
+                        if engine.nextStage != .mouthwash {
+                            ProgressRing(progress: 1 - engine.autoAdvanceRemaining / RoutineEngine.autoAdvanceDelay, color: stage.color, lineWidth: 3)
+                                .frame(width: 18, height: 18)
+                        }
                     }
                 }
                 .buttonStyle(PillButtonStyle(color: .white, foreground: stage.color))
