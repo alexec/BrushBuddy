@@ -18,7 +18,8 @@ with a toothbrush-health check at the end.
 - **7-day history** of morning and night routines (complete / partial / missed) plus a streak.
 - **Per-stage, per-slot settings**: turn any stage off for morning or night. The app respects the choice
   but keeps recommending the full routine.
-- **Reminders** at 08:00 and 20:00 by default, adjustable in Settings.
+- **Reminders** at 08:00 and 20:00 by default, adjustable in Settings. The permission prompt appears
+  after the first completed routine (or when reminder settings change), never on first launch.
 - **Apple Health** (Settings → Apple Health) writes each completed brushing as a Tooth Brushing event with its real start and end time. Needs the HealthKit capability on the App ID for device builds.
 
 ## Building
@@ -36,6 +37,14 @@ Requires Xcode 26 and targets iOS 17 or later. Unit tests live in `BrushwiseTest
 xcodebuild -project Brushwise.xcodeproj -scheme Brushwise \
   -destination 'platform=iOS Simulator,name=iPhone 17 Pro' test
 ```
+
+## Publishing
+
+Everything needed for App Store Connect lives in `AppStore/`: listing copy and review notes in
+the fastlane `deliver` layout, 6.9-inch screenshots, and `CHECKLIST.md` with the remaining
+manual steps. `PRIVACY.md` and `SUPPORT.md` are the privacy policy and support page the
+listing links to. The app ships a privacy manifest (`Brushwise/Resources/PrivacyInfo.xcprivacy`),
+collects no data and uses no network.
 
 ## Debug launch arguments
 
@@ -62,7 +71,9 @@ Brushwise/
   Store/       persistence (BrushStore) and the routine timer (RoutineEngine)
   Services/    synthesised sounds, haptics, notifications
   Views/       home, history, settings, routine flow, Canvas animations
+  Resources/   asset catalog, privacy manifest
 BrushwiseTests/
+AppStore/      listing metadata, screenshots, submission checklist
 ```
 
 Brushwise offers general guidance and is not a substitute for advice from your own dentist.

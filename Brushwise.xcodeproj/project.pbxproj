@@ -14,6 +14,7 @@
 		1539A7E74DC954EE356906C8 /* MouthShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8FA88F83ACD0ED10714CA /* MouthShapes.swift */; };
 		195D07EBE2F7CB01BB9354B6 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D18B55DCA3558B2B9D7475 /* NotificationManager.swift */; };
 		1A04ED90A685681D578AF429 /* BrushwiseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3310C63AC0B7855C6EB2E3C3 /* BrushwiseApp.swift */; };
+		1CFD44DF16273E2F36657C42 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 77488961F4F88E19B8DD7D22 /* PrivacyInfo.xcprivacy */; };
 		27682EF43C7273D59C4E78F3 /* ToothbrushHeadIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301D44BF478ED63BCBB3995C /* ToothbrushHeadIllustration.swift */; };
 		278ED5DDC1662348299E5FE7 /* RoutineCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F889450673CC21AC6E36754 /* RoutineCompleteView.swift */; };
 		2A613149F301A912A5124652 /* FlossAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805FFFF72A0733D13A48B421 /* FlossAnimation.swift */; };
@@ -64,6 +65,7 @@
 		6F889450673CC21AC6E36754 /* RoutineCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineCompleteView.swift; sourceTree = "<group>"; };
 		72744200BC28A376094EF3A8 /* RoutineEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineEngine.swift; sourceTree = "<group>"; };
 		75B5F57354BD17FE0EEB7820 /* MouthwashAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MouthwashAnimation.swift; sourceTree = "<group>"; };
+		77488961F4F88E19B8DD7D22 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		805FFFF72A0733D13A48B421 /* FlossAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlossAnimation.swift; sourceTree = "<group>"; };
 		84B98657098822E0F6BE4237 /* BrushAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrushAnimation.swift; sourceTree = "<group>"; };
 		88382AD60F9B9EAD3AA577C9 /* StageCompleteOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageCompleteOverlay.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				00C7BCF822FEFE8BC97E7E3C /* Assets.xcassets */,
+				77488961F4F88E19B8DD7D22 /* PrivacyInfo.xcprivacy */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABBF1BFDE602E309D2EC4D33 /* Assets.xcassets in Resources */,
+				1CFD44DF16273E2F36657C42 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

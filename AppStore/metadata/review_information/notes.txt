@@ -1,0 +1,7 @@
+Brushwise is a self-contained tooth-brushing routine guide. There is no sign-in and no server.
+
+HealthKit: the app only WRITES Tooth Brushing (HKCategoryTypeIdentifierToothbrushingEvent) samples, and only after the user turns on "Log to Apple Health" in Settings and grants permission. It reads no Health data. The privacy policy (linked in the app listing) covers this.
+
+Notifications: twice-daily local reminders. The permission prompt appears after the user finishes their first routine or changes reminder settings, not on first launch.
+
+To test quickly: tap Start on the home screen. Water flosser and floss are untimed (tap Next). Brush is 2:15 and mouthwash 0:30; the pause/skip controls are on the stage screen. The weekly toothbrush check appears at the end of the first routine.

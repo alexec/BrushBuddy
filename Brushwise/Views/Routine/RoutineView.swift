@@ -126,6 +126,8 @@ struct RoutineView: View {
         if store.settings.healthSyncEnabled {
             Task { await HealthManager.shared.log(session) }
         }
+        // First good moment to ask about reminders: the user has just finished a routine.
+        Task { await NotificationManager.shared.sync(with: store.settings) }
     }
 }
 

@@ -37,11 +37,32 @@ final class NotificationManager {
         }
     }
 
+    /// Whether the system already lets us post notifications (without asking).
+    func isAuthorized() async -> Bool {
+        switch await authorizationStatus() {
+        case .authorized, .provisional, .ephemeral: return true
+        default: return false
+        }
+    }
+
     /// Bring scheduled reminders in line with the settings. Safe to call often.
-    func sync(with settings: AppSettings) async {
+    ///
+    /// With `promptIfNeeded` false, nothing is scheduled unless permission was
+    /// already granted. The app only shows the system prompt after the user has
+    /// finished a routine or touched the reminder settings, so the request
+    /// arrives with context rather than on first launch.
+    func sync(with settings: AppSettings, promptIfNeeded: Bool = true) async {
+        #if DEBUG
+        // Screenshot and test runs must never trigger the system prompt.
+        if DemoOptions.current.skipNotifications || NSClassFromString("XCTestCase") != nil { return }
+        #endif
         center.removePendingNotificationRequests(withIdentifiers: [NotificationManager.morningIdentifier, NotificationManager.nightIdentifier])
         guard settings.remindersEnabled else { return }
-        guard await requestAuthorization() else { return }
+        if promptIfNeeded {
+            guard await requestAuthorization() else { return }
+        } else {
+            guard await isAuthorized() else { return }
+        }
 
         for slot in DaySlot.allCases {
             let minutes = settings.reminderMinutes(for: slot)

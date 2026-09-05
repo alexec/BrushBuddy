@@ -13,11 +13,8 @@ struct BrushwiseApp: App {
                 .task {
                     SoundPlayer.shared.isEnabled = store.settings.soundEnabled
                     Haptics.isEnabled = store.settings.hapticsEnabled
-                    #if DEBUG
-                    // Don't prompt for permission during unit tests or screenshot runs.
-                    if DemoOptions.current.skipNotifications || NSClassFromString("XCTestCase") != nil { return }
-                    #endif
-                    await NotificationManager.shared.sync(with: store.settings)
+                    // Re-schedule reminders if allowed, but never prompt on launch.
+                    await NotificationManager.shared.sync(with: store.settings, promptIfNeeded: false)
                 }
         }
     }
