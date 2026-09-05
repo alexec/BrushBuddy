@@ -211,6 +211,40 @@ final class RoutineEngineTests: XCTestCase {
         XCTAssertEqual(session.completedStages, [.floss, .brush])
     }
 
+    func testNoAutoAdvanceIntoMouthwash() {
+        // The user needs time to go pour a cup, so this stage-complete screen
+        // must wait for a deliberate tap rather than counting down on its own.
+        let clock = Clock()
+        let engine = makeEngine([.brush, .mouthwash], clock: clock)
+        engine.start()
+        defer { engine.stop() }
+
+        engine.skipStage()
+        XCTAssertEqual(engine.phase, .stageComplete)
+        clock.advance(RoutineEngine.autoAdvanceDelay + 10)
+        engine.debugTick()
+        XCTAssertEqual(engine.phase, .stageComplete, "should not auto-advance into mouthwash")
+        XCTAssertEqual(engine.currentStage, .brush)
+
+        engine.continueAfterStageComplete()
+        XCTAssertEqual(engine.currentStage, .mouthwash, "a manual tap still moves on")
+    }
+
+    func testAutoAdvanceStillHappensBetweenOtherStages() {
+        let clock = Clock()
+        let engine = makeEngine([.brush, .mouthwash], clock: clock)
+        engine.start()
+        defer { engine.stop() }
+
+        engine.skipStage()          // brush → stageComplete
+        engine.continueAfterStageComplete()
+        engine.skipStage()          // mouthwash → stageComplete, no stage after it
+        XCTAssertEqual(engine.phase, .stageComplete)
+        clock.advance(RoutineEngine.autoAdvanceDelay + 1)
+        engine.debugTick()
+        XCTAssertNotEqual(engine.phase, .stageComplete, "with nothing next, auto-advance still applies")
+    }
+
     func testBrushingIntervalRecordedForHealth() {
         let clock = Clock()
         let engine = makeEngine([.floss, .brush, .mouthwash], clock: clock)

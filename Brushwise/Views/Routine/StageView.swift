@@ -16,8 +16,8 @@ struct StageView: View {
                     .padding(.top, 6)
 
                 ScrollView(showsIndicators: false) {
-                VStack(spacing: 18) {
-                    VStack(alignment: .leading, spacing: 12) {
+                VStack(spacing: 14) {
+                    VStack(alignment: .leading, spacing: 10) {
                         Text(step.title)
                             .font(.display(34))
                             .foregroundStyle(Theme.text)
@@ -26,7 +26,7 @@ struct StageView: View {
                             StepSegmentBar(steps: stage.steps, currentIndex: engine.stepIndex, currentProgress: engine.stepProgress, color: stage.color)
                         }
                     }
-                    .padding(.top, 18)
+                    .padding(.top, 12)
 
                     animation(for: stage, step: step)
                         .frame(height: 220)
@@ -44,7 +44,7 @@ struct StageView: View {
                         }
 
                     if stage.isTimed {
-                        HStack(alignment: .firstTextBaseline, spacing: 14) {
+                        HStack(alignment: .top, spacing: 14) {
                             Text("\(Int(engine.stepRemaining.rounded(.up)))")
                                 .font(.display(64))
                                 .monospacedDigit()
@@ -56,6 +56,7 @@ struct StageView: View {
                                 .font(.subheadline)
                                 .foregroundStyle(Theme.textSecondary)
                                 .fixedSize(horizontal: false, vertical: true)
+                                .padding(.top, 10)
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .accessibilityElement(children: .combine)
@@ -71,7 +72,7 @@ struct StageView: View {
                     TipCarousel(tips: stage.tips, color: stage.color)
                 }
                 .padding(.horizontal, 20)
-                .padding(.bottom, 16)
+                .padding(.bottom, 10)
                 }
 
                 controls(stage: stage)
@@ -144,8 +145,7 @@ struct StageView: View {
     }
 
     private func timedControls(stage: BrushingStage) -> some View {
-        let isLastStep = engine.stepIndex >= stage.steps.count - 1
-        return HStack {
+        HStack {
             Color.clear.frame(width: 56, height: 56)
             Spacer()
             Button {
@@ -157,21 +157,9 @@ struct StageView: View {
             .buttonStyle(RoundButtonStyle(color: stage.color, size: 76))
             .accessibilityLabel(engine.isPaused ? "Resume" : "Pause")
             Spacer()
-            Menu {
-                Button {
-                    Haptics.tap()
-                    engine.skipStep()
-                } label: {
-                    Label(isLastStep ? "Finish this stage" : "Skip this step", systemImage: "forward.fill")
-                }
-                if !isLastStep {
-                    Button {
-                        Haptics.tap()
-                        engine.skipStage()
-                    } label: {
-                        Label("Skip rest of \(stage.title.lowercased())", systemImage: "forward.end.fill")
-                    }
-                }
+            Button {
+                Haptics.tap()
+                engine.skipStage()
             } label: {
                 Image(systemName: "forward.fill")
                     .font(.system(size: 18, weight: .bold))
@@ -180,7 +168,8 @@ struct StageView: View {
                     .background(Theme.surfaceRaised, in: Circle())
                     .overlay(Circle().strokeBorder(Theme.stroke))
             }
-            .accessibilityLabel("Skip options")
+            .accessibilityLabel("Skip \(stage.title.lowercased())")
+            .accessibilityHint("Finishes this stage now")
         }
         .padding(.horizontal, 36)
     }

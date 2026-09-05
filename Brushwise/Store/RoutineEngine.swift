@@ -221,6 +221,9 @@ final class RoutineEngine {
             elapsedInStep = elapsed
         case .stageComplete:
             guard let at = stageCompleteAt else { return }
+            // Mouthwash needs the user to go pour a cup first, so never auto-advance
+            // into it — wait for a deliberate tap on Continue.
+            guard nextStage != .mouthwash else { return }
             let remaining = RoutineEngine.autoAdvanceDelay - now().timeIntervalSince(at)
             autoAdvanceRemaining = max(0, remaining)
             if remaining <= 0 { continueAfterStageComplete() }
