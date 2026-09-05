@@ -42,7 +42,7 @@ struct SettingsView: View {
             .alert("Health access is off", isPresented: $showHealthDeniedAlert) {
                 Button("OK", role: .cancel) {}
             } message: {
-                Text("To log brushing, allow BrushBuddy to write Tooth Brushing data in the Health app: Health → Profile → Apps → BrushBuddy.")
+                Text("To log brushing, allow Brushwise to write Tooth Brushing data in the Health app: Health → Profile → Apps → Brushwise.")
             }
             .alert("Notifications are off", isPresented: $showDeniedAlert) {
                 Button("Open Settings") {
@@ -50,7 +50,7 @@ struct SettingsView: View {
                 }
                 Button("Not now", role: .cancel) {}
             } message: {
-                Text("BrushBuddy can't remind you until notifications are allowed in the iOS Settings app.")
+                Text("Brushwise can't remind you until notifications are allowed in the iOS Settings app.")
             }
         }
     }

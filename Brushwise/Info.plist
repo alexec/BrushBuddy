@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>BrushBuddy</string>
+	<string>Brushwise</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -23,9 +23,9 @@
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>NSHealthShareUsageDescription</key>
-	<string>BrushBuddy only writes Tooth Brushing events; it does not read your health data.</string>
+	<string>Brushwise only writes Tooth Brushing events; it does not read your health data.</string>
 	<key>NSHealthUpdateUsageDescription</key>
-	<string>BrushBuddy saves each completed brushing to Health as a Tooth Brushing event.</string>
+	<string>Brushwise saves each completed brushing to Health as a Tooth Brushing event.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

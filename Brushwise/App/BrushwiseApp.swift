@@ -1,8 +1,8 @@
 import SwiftUI
 
 @main
-struct BrushBuddyApp: App {
-    @State private var store = BrushBuddyApp.makeStore()
+struct BrushwiseApp: App {
+    @State private var store = BrushwiseApp.makeStore()
 
     var body: some Scene {
         WindowGroup {
@@ -35,7 +35,7 @@ struct BrushBuddyApp: App {
 
 #if DEBUG
 /// Launch arguments for previews and screenshots, e.g.
-/// `xcrun simctl launch <udid> com.alexcollins.brushbuddy -demoScreen routine -demoStage brush`.
+/// `xcrun simctl launch <udid> com.alexcollins.brushwise -demoScreen routine -demoStage brush`.
 /// Values arrive through the UserDefaults argument domain.
 struct DemoOptions {
     /// "routine" or "settings".

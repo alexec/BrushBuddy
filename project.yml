@@ -1,4 +1,4 @@
-name: BrushBuddy
+name: Brushwise
 options:
   bundleIdPrefix: com.alexcollins
   deploymentTarget:
@@ -43,15 +43,15 @@ settings:
       VALIDATE_PRODUCT: YES
       COPY_PHASE_STRIP: NO
 targets:
-  BrushBuddy:
+  Brushwise:
     type: application
     platform: iOS
     sources:
-      - path: BrushBuddy
+      - path: Brushwise
     info:
-      path: BrushBuddy/Info.plist
+      path: Brushwise/Info.plist
       properties:
-        CFBundleDisplayName: BrushBuddy
+        CFBundleDisplayName: Brushwise
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         UILaunchScreen:
@@ -62,16 +62,16 @@ targets:
           UIApplicationSupportsMultipleScenes: false
         ITSAppUsesNonExemptEncryption: false
         UIRequiresFullScreen: true
-        NSHealthUpdateUsageDescription: BrushBuddy saves each completed brushing to Health as a Tooth Brushing event.
-        NSHealthShareUsageDescription: BrushBuddy only writes Tooth Brushing events; it does not read your health data.
+        NSHealthUpdateUsageDescription: Brushwise saves each completed brushing to Health as a Tooth Brushing event.
+        NSHealthShareUsageDescription: Brushwise only writes Tooth Brushing events; it does not read your health data.
     entitlements:
-      path: BrushBuddy/BrushBuddy.entitlements
+      path: Brushwise/Brushwise.entitlements
       properties:
         com.apple.developer.healthkit: true
         com.apple.developer.healthkit.access: []
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.alexcollins.brushbuddy
+        PRODUCT_BUNDLE_IDENTIFIER: com.alexcollins.brushwise
         TARGETED_DEVICE_FAMILY: "1"
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
@@ -80,30 +80,30 @@ targets:
         ENABLE_PREVIEWS: YES
         SWIFT_EMIT_LOC_STRINGS: YES
         LD_RUNPATH_SEARCH_PATHS: ["$(inherited)", "@executable_path/Frameworks"]
-  BrushBuddyTests:
+  BrushwiseTests:
     type: bundle.unit-test
     platform: iOS
     sources:
-      - path: BrushBuddyTests
+      - path: BrushwiseTests
     dependencies:
-      - target: BrushBuddy
+      - target: Brushwise
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.alexcollins.brushbuddy.tests
+        PRODUCT_BUNDLE_IDENTIFIER: com.alexcollins.brushwise.tests
         GENERATE_INFOPLIST_FILE: YES
         DEVELOPMENT_TEAM: 6T4RVD5724
         BUNDLE_LOADER: $(TEST_HOST)
         TARGETED_DEVICE_FAMILY: "1"
         LD_RUNPATH_SEARCH_PATHS: ["$(inherited)", "@executable_path/Frameworks", "@loader_path/Frameworks"]
 schemes:
-  BrushBuddy:
+  Brushwise:
     build:
       targets:
-        BrushBuddy: all
-        BrushBuddyTests: [test]
+        Brushwise: all
+        BrushwiseTests: [test]
     run:
       config: Debug
     test:
       config: Debug
       targets:
-        - BrushBuddyTests
+        - BrushwiseTests

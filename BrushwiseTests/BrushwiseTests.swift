@@ -1,5 +1,5 @@
 import XCTest
-@testable import BrushBuddy
+@testable import Brushwise
 
 final class DaySlotTests: XCTestCase {
     private var calendar: Calendar {

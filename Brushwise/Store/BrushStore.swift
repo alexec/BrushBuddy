@@ -14,7 +14,7 @@ final class BrushStore {
     private let sessionsURL: URL?
     private let calendar: Calendar
 
-    private static let settingsKey = "brushbuddy.settings.v1"
+    private static let settingsKey = "brushwise.settings.v1"
 
     init(defaults: UserDefaults = .standard, sessionsURL: URL? = BrushStore.defaultSessionsURL(), calendar: Calendar = .current) {
         self.defaults = defaults
@@ -39,7 +39,7 @@ final class BrushStore {
 
     /// An in-memory store for previews and tests.
     static func inMemory(settings: AppSettings = AppSettings(), sessions: [BrushingSession] = []) -> BrushStore {
-        let suite = UserDefaults(suiteName: "brushbuddy.preview.\(UUID().uuidString)")!
+        let suite = UserDefaults(suiteName: "brushwise.preview.\(UUID().uuidString)")!
         let store = BrushStore(defaults: suite, sessionsURL: nil)
         store.settings = settings
         store.sessions = sessions
@@ -48,7 +48,7 @@ final class BrushStore {
 
     nonisolated static func defaultSessionsURL() -> URL? {
         guard let dir = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first else { return nil }
-        let folder = dir.appendingPathComponent("BrushBuddy", isDirectory: true)
+        let folder = dir.appendingPathComponent("Brushwise", isDirectory: true)
         try? FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true)
         return folder.appendingPathComponent("sessions.json")
     }

@@ -190,5 +190,5 @@ enum DentalAdvice {
     // [Mazhari] floss-then-brush; [NHS-clean] two minutes, spit don't rinse, mouthwash at a separate time.
     static let routineOrderExplanation = "Clean between your teeth first (water flosser, then floss) so the fluoride in your toothpaste can reach more of each tooth. Brush for two full minutes, brush your tongue, then spit without rinsing. Mouthwash works best at a separate time of day, but if you use it now, pick one with fluoride."
 
-    static let disclaimer = "BrushBuddy offers general oral-health guidance based on public advice from dental bodies. It is not a substitute for advice from your own dentist or hygienist."
+    static let disclaimer = "Brushwise offers general oral-health guidance based on public advice from dental bodies. It is not a substitute for advice from your own dentist or hygienist."
 }

@@ -8,8 +8,8 @@ final class NotificationManager {
 
     private let center = UNUserNotificationCenter.current()
 
-    static let morningIdentifier = "brushbuddy.reminder.morning"
-    static let nightIdentifier = "brushbuddy.reminder.night"
+    static let morningIdentifier = "brushwise.reminder.morning"
+    static let nightIdentifier = "brushwise.reminder.night"
 
     private init() {}
 

@@ -1,4 +1,4 @@
-# BrushBuddy
+# Brushwise
 
 A free, friendly iOS app that walks you through a complete oral-hygiene routine and
 nudges you toward best practice: water flosser → floss → two-minute brush (plus tongue) → mouthwash,
@@ -27,13 +27,13 @@ The Xcode project is generated from `project.yml` with [XcodeGen](https://github
 
 ```bash
 xcodegen generate
-open BrushBuddy.xcodeproj
+open Brushwise.xcodeproj
 ```
 
-Requires Xcode 26 and targets iOS 17 or later. Unit tests live in `BrushBuddyTests`:
+Requires Xcode 26 and targets iOS 17 or later. Unit tests live in `BrushwiseTests`:
 
 ```bash
-xcodebuild -project BrushBuddy.xcodeproj -scheme BrushBuddy \
+xcodebuild -project Brushwise.xcodeproj -scheme Brushwise \
   -destination 'platform=iOS Simulator,name=iPhone 17 Pro' test
 ```
 
@@ -42,7 +42,7 @@ xcodebuild -project BrushBuddy.xcodeproj -scheme BrushBuddy \
 In Debug builds, launch arguments jump straight to a screen (handy for screenshots):
 
 ```bash
-xcrun simctl launch booted com.alexcollins.brushbuddy \
+xcrun simctl launch booted com.alexcollins.brushwise \
   -skipNotifications 1 -demoHistory 1 -demoScreen routine -demoStage brush
 ```
 
@@ -55,14 +55,14 @@ xcrun simctl launch booted com.alexcollins.brushbuddy \
 ## Layout
 
 ```
-BrushBuddy/
+Brushwise/
   App/         entry point, debug options
   Models/      stages, steps, sessions, settings
   Content/     all dental advice text
   Store/       persistence (BrushStore) and the routine timer (RoutineEngine)
   Services/    synthesised sounds, haptics, notifications
   Views/       home, history, settings, routine flow, Canvas animations
-BrushBuddyTests/
+BrushwiseTests/
 ```
 
-BrushBuddy offers general guidance and is not a substitute for advice from your own dentist.
+Brushwise offers general guidance and is not a substitute for advice from your own dentist.

@@ -15,10 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "81B03601A036A6E62C5F0C14"
-               BuildableName = "BrushBuddy.app"
-               BlueprintName = "BrushBuddy"
-               ReferencedContainer = "container:BrushBuddy.xcodeproj">
+               BlueprintIdentifier = "2D0881FCE8D4FB8ABD2C301B"
+               BuildableName = "Brushwise.app"
+               BlueprintName = "Brushwise"
+               ReferencedContainer = "container:Brushwise.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,10 +29,10 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1ED5C4D3B755AEBE0BAF94BE"
-               BuildableName = "BrushBuddyTests.xctest"
-               BlueprintName = "BrushBuddyTests"
-               ReferencedContainer = "container:BrushBuddy.xcodeproj">
+               BlueprintIdentifier = "098F9714CAC83E6E4F8EC1D3"
+               BuildableName = "BrushwiseTests.xctest"
+               BlueprintName = "BrushwiseTests"
+               ReferencedContainer = "container:Brushwise.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,10 +46,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "81B03601A036A6E62C5F0C14"
-            BuildableName = "BrushBuddy.app"
-            BlueprintName = "BrushBuddy"
-            ReferencedContainer = "container:BrushBuddy.xcodeproj">
+            BlueprintIdentifier = "2D0881FCE8D4FB8ABD2C301B"
+            BuildableName = "Brushwise.app"
+            BlueprintName = "Brushwise"
+            ReferencedContainer = "container:Brushwise.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -58,10 +58,10 @@
             parallelizable = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1ED5C4D3B755AEBE0BAF94BE"
-               BuildableName = "BrushBuddyTests.xctest"
-               BlueprintName = "BrushBuddyTests"
-               ReferencedContainer = "container:BrushBuddy.xcodeproj">
+               BlueprintIdentifier = "098F9714CAC83E6E4F8EC1D3"
+               BuildableName = "BrushwiseTests.xctest"
+               BlueprintName = "BrushwiseTests"
+               ReferencedContainer = "container:Brushwise.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -82,10 +82,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "81B03601A036A6E62C5F0C14"
-            BuildableName = "BrushBuddy.app"
-            BlueprintName = "BrushBuddy"
-            ReferencedContainer = "container:BrushBuddy.xcodeproj">
+            BlueprintIdentifier = "2D0881FCE8D4FB8ABD2C301B"
+            BuildableName = "Brushwise.app"
+            BlueprintName = "Brushwise"
+            ReferencedContainer = "container:Brushwise.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
@@ -101,10 +101,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "81B03601A036A6E62C5F0C14"
-            BuildableName = "BrushBuddy.app"
-            BlueprintName = "BrushBuddy"
-            ReferencedContainer = "container:BrushBuddy.xcodeproj">
+            BlueprintIdentifier = "2D0881FCE8D4FB8ABD2C301B"
+            BuildableName = "Brushwise.app"
+            BlueprintName = "Brushwise"
+            ReferencedContainer = "container:Brushwise.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
