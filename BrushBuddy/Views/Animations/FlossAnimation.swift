@@ -4,11 +4,10 @@ import SwiftUI
 /// sliding gently up and down. Fingers hold the ends.
 struct FlossAnimation: View {
     var zone: MouthZone
-    @Environment(\.visualStyle) private var style
     var color: Color = BrushingStage.floss.color
 
     var body: some View {
-        let palette = DrawPalette.forStyle(style)
+        let palette = DrawPalette.standard
         return TimelineView(.animation(minimumInterval: 1 / 40)) { context in
             let t = context.date.timeIntervalSinceReferenceDate
             Canvas { ctx, size in
@@ -74,24 +73,17 @@ struct FlossAnimation: View {
                 ctx.stroke(floss, with: .color(.white.opacity(0.95)), style: StrokeStyle(lineWidth: 2.4, lineCap: .round, lineJoin: .round))
                 ctx.stroke(floss, with: .color(color.opacity(0.5)), style: StrokeStyle(lineWidth: 1, lineCap: .round, lineJoin: .round))
 
-                if palette.detailed {
-                    // Fingertips holding the floss.
-                    for f in [fingerA, fingerB] {
-                        let r: CGFloat = 12
-                        ctx.fill(Path(ellipseIn: CGRect(x: f.x - r, y: f.y - r, width: r * 2, height: r * 2)), with: .color(palette.skin))
-                        ctx.stroke(Path(ellipseIn: CGRect(x: f.x - r, y: f.y - r, width: r * 2, height: r * 2)), with: .color(palette.gumDark.opacity(0.5)), lineWidth: 1)
-                        for k in 0..<3 {
-                            let y = f.y - 5 + CGFloat(k) * 4
-                            var wrap = Path()
-                            wrap.move(to: CGPoint(x: f.x - 8, y: y))
-                            wrap.addLine(to: CGPoint(x: f.x + 8, y: y))
-                            ctx.stroke(wrap, with: .color(.white.opacity(0.8)), lineWidth: 1.2)
-                        }
-                    }
-                } else {
-                    // Floss ends: small rounded caps instead of drawn fingers.
-                    for f in [fingerA, fingerB] {
-                        ctx.fill(Path(ellipseIn: CGRect(x: f.x - 3, y: f.y - 3, width: 6, height: 6)), with: .color(.white.opacity(0.9)))
+                // Fingertips holding the floss.
+                for f in [fingerA, fingerB] {
+                    let r: CGFloat = 12
+                    ctx.fill(Path(ellipseIn: CGRect(x: f.x - r, y: f.y - r, width: r * 2, height: r * 2)), with: .color(palette.skin))
+                    ctx.stroke(Path(ellipseIn: CGRect(x: f.x - r, y: f.y - r, width: r * 2, height: r * 2)), with: .color(palette.gumDark.opacity(0.5)), lineWidth: 1)
+                    for k in 0..<3 {
+                        let y = f.y - 5 + CGFloat(k) * 4
+                        var wrap = Path()
+                        wrap.move(to: CGPoint(x: f.x - 8, y: y))
+                        wrap.addLine(to: CGPoint(x: f.x + 8, y: y))
+                        ctx.stroke(wrap, with: .color(.white.opacity(0.8)), lineWidth: 1.2)
                     }
                 }
 

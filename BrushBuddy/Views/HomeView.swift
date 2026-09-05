@@ -7,7 +7,6 @@ struct RoutineLaunch: Identifiable {
 
 struct HomeView: View {
     @Environment(BrushStore.self) private var store
-    @Environment(\.visualStyle) private var style
     @State private var showSettings = false
     @State private var launch: RoutineLaunch?
     @State private var now = Date()
@@ -30,7 +29,7 @@ struct HomeView: View {
                 .padding(.top, 6)
                 .padding(.bottom, 32)
             }
-            .background(Theme.background(tint: Theme.accent, style: style))
+            .background(Theme.background(tint: Theme.accent))
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button { showSettings = true } label: {
@@ -86,7 +85,7 @@ struct HomeView: View {
                 }
             }
             Spacer(minLength: 0)
-            ToothMascot(size: style == .kids ? 88 : 74, mood: (morningDone && nightDone) ? .cheering : .happy)
+            ToothMascot(size: 88, mood: (morningDone && nightDone) ? .cheering : .happy)
         }
         .padding(.top, 10)
     }

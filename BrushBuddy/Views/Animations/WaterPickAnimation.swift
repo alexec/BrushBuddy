@@ -4,11 +4,10 @@ import SwiftUI
 /// droplets and a splash. The active row glows.
 struct WaterPickAnimation: View {
     var zone: MouthZone
-    @Environment(\.visualStyle) private var style
     var color: Color = BrushingStage.waterPick.color
 
     var body: some View {
-        let palette = DrawPalette.forStyle(style)
+        let palette = DrawPalette.standard
         return TimelineView(.animation(minimumInterval: 1 / 40)) { context in
             let t = context.date.timeIntervalSinceReferenceDate
             Canvas { ctx, size in

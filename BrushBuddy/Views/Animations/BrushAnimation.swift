@@ -4,11 +4,10 @@ import SwiftUI
 /// small circles over it. For the tongue step the brush sweeps back to front.
 struct BrushAnimation: View {
     var zone: MouthZone
-    @Environment(\.visualStyle) private var style
     var color: Color = BrushingStage.brush.color
 
     var body: some View {
-        let palette = DrawPalette.forStyle(style)
+        let palette = DrawPalette.standard
         return TimelineView(.animation(minimumInterval: 1 / 40)) { context in
             let t = context.date.timeIntervalSinceReferenceDate
             Canvas { ctx, size in

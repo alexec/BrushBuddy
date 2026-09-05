@@ -2,30 +2,15 @@ import SwiftUI
 
 struct RoutineCompleteView: View {
     @Environment(BrushStore.self) private var store
-    @Environment(\.visualStyle) private var style
     var session: BrushingSession
     var onClose: () -> Void
 
     var body: some View {
         ZStack {
-            ConfettiBurst(color: Theme.accent, count: 28)
+            ConfettiBurst(color: Theme.accent)
             VStack(spacing: 18) {
                 Spacer()
-                if style == .kids {
-                    ToothMascot(size: 130, mood: .cheering)
-                } else {
-                ZStack {
-                    Circle().stroke(Theme.accent.opacity(0.25), lineWidth: 10).frame(width: 132, height: 132)
-                    Circle().trim(from: 0, to: session.isComplete ? 1 : CGFloat(session.completedStages.count) / CGFloat(max(1, session.plannedStages.count)))
-                        .stroke(Theme.accent, style: StrokeStyle(lineWidth: 10, lineCap: .round))
-                        .rotationEffect(.degrees(-90))
-                        .frame(width: 132, height: 132)
-                    Image(systemName: "checkmark")
-                        .font(.system(size: 52, weight: .bold))
-                        .foregroundStyle(Theme.text)
-                }
-                .shadow(color: Theme.accent.opacity(0.4), radius: 24)
-                }
+                ToothMascot(size: 130, mood: .cheering)
                 Text(session.isComplete ? "All done!" : "Nice work!")
                     .font(.display(38))
                     .foregroundStyle(Theme.text)

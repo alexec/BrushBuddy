@@ -6,7 +6,6 @@ struct RoutineView: View {
     @Environment(BrushStore.self) private var store
     @Environment(\.dismiss) private var dismiss
     @Environment(\.scenePhase) private var scenePhase
-    @Environment(\.visualStyle) private var style
 
     @State private var engine: RoutineEngine
     @State private var showExitConfirm = false
@@ -77,7 +76,7 @@ struct RoutineView: View {
             if let stage = engine.currentStage, engine.phase == .stage || engine.phase == .stageComplete { return stage.color }
             return Theme.accent
         }()
-        return Theme.background(tint: tint, style: style)
+        return Theme.background(tint: tint)
             .animation(.easeInOut(duration: 0.6), value: engine.stageIndex)
     }
 

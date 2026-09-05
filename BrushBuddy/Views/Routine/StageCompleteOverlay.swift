@@ -68,16 +68,13 @@ struct StageCompleteOverlay: View {
 /// Lightweight procedural confetti.
 struct ConfettiBurst: View {
     var color: Color
-    var count = 28
-    @Environment(\.visualStyle) private var style
+    var count = 56
 
     var body: some View {
-        let kids = style == .kids
-        let pieces = kids ? count * 2 : count
-        return TimelineView(.animation(minimumInterval: 1 / 40)) { context in
+        TimelineView(.animation(minimumInterval: 1 / 40)) { context in
             Canvas { ctx, size in
                 let t = context.date.timeIntervalSinceReferenceDate
-                for i in 0..<pieces {
+                for i in 0..<count {
                     let seed = Draw.hash(i * 97 + 11)
                     let seed2 = Draw.hash(i * 31 + 5)
                     let speed = 0.25 + Double(seed2) * 0.35
@@ -88,7 +85,7 @@ struct ConfettiBurst: View {
                     var piece = ctx
                     piece.translateBy(x: x, y: y)
                     piece.rotate(by: .radians(CGFloat(t) * 3 * (seed > 0.5 ? 1 : -1) + seed * 6))
-                    let fill: Color = kids ? Color(hue: Double(seed2), saturation: 0.6, brightness: 1).opacity(0.9) : color.opacity(0.35 + 0.35 * Double(seed2))
+                    let fill = Color(hue: Double(seed2), saturation: 0.6, brightness: 1).opacity(0.9)
                     piece.fill(Path(roundedRect: CGRect(x: -w / 2, y: -w / 4, width: w, height: w / 2), cornerRadius: 1.5), with: .color(fill))
                 }
             }

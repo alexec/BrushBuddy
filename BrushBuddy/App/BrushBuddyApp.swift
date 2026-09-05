@@ -10,7 +10,6 @@ struct BrushBuddyApp: App {
                 .environment(store)
                 .tint(Theme.accent)
                 .preferredColorScheme(.dark)
-                .environment(\.visualStyle, store.settings.kidsMode ? .kids : .refined)
                 .task {
                     SoundPlayer.shared.isEnabled = store.settings.soundEnabled
                     Haptics.isEnabled = store.settings.hapticsEnabled
@@ -62,7 +61,6 @@ struct DemoOptions {
     static var sampleSettings: AppSettings {
         var s = AppSettings()
         s.brushReplacedOn = Calendar.current.date(byAdding: .day, value: -95, to: Date())
-        s.kidsMode = !UserDefaults.standard.bool(forKey: "demoRefined")
         return s
     }
 

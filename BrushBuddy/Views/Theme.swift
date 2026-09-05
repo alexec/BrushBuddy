@@ -18,37 +18,18 @@ enum Theme {
     static let water = Color(red: 0.45, green: 0.78, blue: 1.0)
     static let kidsPink = Color(red: 1.0, green: 0.55, blue: 0.75)
 
-    /// Page background with a soft glow of `tint` at the top. Kids mode adds a
-    /// second, warmer glow so the page feels more playful.
-    static func background(tint: Color, style: VisualStyle = .refined) -> some View {
+    /// Page background: a glow of `tint` at the top and a warm pink glow below.
+    static func background(tint: Color) -> some View {
         ZStack {
             LinearGradient(colors: [bg2, bg], startPoint: .top, endPoint: .bottom)
-            RadialGradient(colors: [tint.opacity(style == .kids ? 0.5 : 0.38), .clear], center: UnitPoint(x: 0.5, y: 0.0), startRadius: 0, endRadius: 520)
-            RadialGradient(colors: [(style == .kids ? kidsPink : tint).opacity(style == .kids ? 0.3 : 0.16), .clear], center: UnitPoint(x: 0.9, y: 0.9), startRadius: 0, endRadius: 360)
+            RadialGradient(colors: [tint.opacity(0.5), .clear], center: UnitPoint(x: 0.5, y: 0.0), startRadius: 0, endRadius: 520)
+            RadialGradient(colors: [kidsPink.opacity(0.3), .clear], center: UnitPoint(x: 0.9, y: 0.9), startRadius: 0, endRadius: 360)
         }
         .ignoresSafeArea()
     }
 }
 
-/// Refined: clean diagram-style drawings. Kids: cartoon faces, lips, fingers,
-/// vivid colours and rainbow confetti.
-enum VisualStyle {
-    case refined
-    case kids
-}
-
-private struct VisualStyleKey: EnvironmentKey {
-    static let defaultValue: VisualStyle = .refined
-}
-
-extension EnvironmentValues {
-    var visualStyle: VisualStyle {
-        get { self[VisualStyleKey.self] }
-        set { self[VisualStyleKey.self] = newValue }
-    }
-}
-
-/// Colours and flags used by the Canvas drawings, per visual style.
+/// Colours used by the Canvas drawings.
 struct DrawPalette {
     let gum: Color
     let gumDark: Color
@@ -57,33 +38,15 @@ struct DrawPalette {
     let mouthInterior: Color
     let tongue: Color
     let skin: Color
-    /// Draw lips, tooth outlines, molar fissures and the tongue midline.
-    let detailed: Bool
 
-    static func forStyle(_ style: VisualStyle) -> DrawPalette {
-        switch style {
-        case .refined:
-            return DrawPalette(
-                gum: Color(red: 0.85, green: 0.50, blue: 0.60).opacity(0.45),
-                gumDark: Color(red: 0.85, green: 0.50, blue: 0.60).opacity(0.7),
-                tooth: .white,
-                toothDim: Color.white.opacity(0.22),
-                mouthInterior: Color.black.opacity(0.28),
-                tongue: Color(red: 0.85, green: 0.50, blue: 0.60).opacity(0.35),
-                skin: Color.white.opacity(0.9),
-                detailed: false)
-        case .kids:
-            return DrawPalette(
-                gum: Color(red: 0.98, green: 0.62, blue: 0.68),
-                gumDark: Color(red: 0.86, green: 0.45, blue: 0.54),
-                tooth: .white,
-                toothDim: Color(red: 0.78, green: 0.80, blue: 0.86),
-                mouthInterior: Color(red: 0.30, green: 0.12, blue: 0.20),
-                tongue: Color(red: 0.96, green: 0.55, blue: 0.62),
-                skin: Color(red: 0.99, green: 0.85, blue: 0.72),
-                detailed: true)
-        }
-    }
+    static let standard = DrawPalette(
+        gum: Color(red: 0.98, green: 0.62, blue: 0.68),
+        gumDark: Color(red: 0.86, green: 0.45, blue: 0.54),
+        tooth: .white,
+        toothDim: Color(red: 0.78, green: 0.80, blue: 0.86),
+        mouthInterior: Color(red: 0.30, green: 0.12, blue: 0.20),
+        tongue: Color(red: 0.96, green: 0.55, blue: 0.62),
+        skin: Color(red: 0.99, green: 0.85, blue: 0.72))
 }
 
 struct GlassCard: ViewModifier {

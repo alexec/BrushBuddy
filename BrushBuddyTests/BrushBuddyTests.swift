@@ -266,8 +266,7 @@ final class RoutineEngineTests: XCTestCase {
         XCTAssertEqual(decoded.orderedStages(for: .morning), [.floss, .brush])
         XCTAssertFalse(decoded.remindersEnabled)
         XCTAssertEqual(decoded.morningReminderMinutes, 420)
-        XCTAssertTrue(decoded.kidsMode, "missing key falls back to the default (kids mode on)")
-        XCTAssertFalse(decoded.healthSyncEnabled)
+        XCTAssertFalse(decoded.healthSyncEnabled, "missing key falls back to default")
         XCTAssertNil(decoded.lastBrushCheckOn)
     }
 

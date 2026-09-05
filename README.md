@@ -19,7 +19,6 @@ with a toothbrush-health check at the end.
 - **Per-stage, per-slot settings**: turn any stage off for morning or night. The app respects the choice
   but keeps recommending the full routine.
 - **Reminders** at 08:00 and 20:00 by default, adjustable in Settings.
-- **Kids mode** (on by default, Settings → Look & feel) uses cartoon graphics: a smiley tooth, a face with puffed cheeks for mouthwash, lips and fingertips in the mouth drawings, rainbow confetti. Turning it off gives a refined diagram style.
 - **Apple Health** (Settings → Apple Health) writes each completed brushing as a Tooth Brushing event with its real start and end time. Needs the HealthKit capability on the App ID for device builds.
 
 ## Building
@@ -52,7 +51,6 @@ xcrun simctl launch booted com.alexcollins.brushbuddy \
 - `-demoPhase stageComplete|brushCheck|finished`
 - `-demoHistory 1` seeds a week of sample sessions in memory
 - `-skipNotifications 1` skips the reminder permission prompt
-- `-demoRefined 1` (with `-demoHistory 1`) turns kids mode off for the demo store
 
 ## Layout
 

@@ -13,9 +13,6 @@ struct AppSettings: Codable, Equatable {
     var soundEnabled: Bool = true
     var hapticsEnabled: Bool = true
 
-    /// Playful cartoon graphics (the default look). Off gives the refined diagram style.
-    var kidsMode: Bool = true
-
     /// Write each completed brushing to Apple Health as a Tooth Brushing event.
     var healthSyncEnabled: Bool = false
 
@@ -39,7 +36,6 @@ struct AppSettings: Codable, Equatable {
         nightReminderMinutes = try c.decodeIfPresent(Int.self, forKey: .nightReminderMinutes) ?? nightReminderMinutes
         soundEnabled = try c.decodeIfPresent(Bool.self, forKey: .soundEnabled) ?? soundEnabled
         hapticsEnabled = try c.decodeIfPresent(Bool.self, forKey: .hapticsEnabled) ?? hapticsEnabled
-        kidsMode = try c.decodeIfPresent(Bool.self, forKey: .kidsMode) ?? kidsMode
         healthSyncEnabled = try c.decodeIfPresent(Bool.self, forKey: .healthSyncEnabled) ?? healthSyncEnabled
         brushReplacedOn = try c.decodeIfPresent(Date.self, forKey: .brushReplacedOn)
         lastBrushCheckOn = try c.decodeIfPresent(Date.self, forKey: .lastBrushCheckOn)

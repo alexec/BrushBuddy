@@ -59,13 +59,11 @@ enum FrontMouth {
         return (0..<(teethPerRow - 1)).filter { isHighlighted(index: $0, upper: upper, zone: zone) && isHighlighted(index: $0 + 1, upper: upper, zone: zone) }
     }
 
-    static func draw(in context: inout GraphicsContext, layout: Layout, zone: MouthZone, glow: Color, palette: DrawPalette) {
+    static func draw(in context: inout GraphicsContext, layout: Layout, zone: MouthZone, glow: Color, palette: DrawPalette = .standard) {
         let rect = layout.rect
-        if palette.detailed {
-            // Lips around the mouth.
-            let lips = Path(roundedRect: rect.insetBy(dx: -rect.width * 0.04, dy: -rect.height * 0.06), cornerRadius: rect.height * 0.35)
-            context.fill(lips, with: .color(palette.gumDark))
-        }
+        // Lips around the mouth.
+        let lips = Path(roundedRect: rect.insetBy(dx: -rect.width * 0.04, dy: -rect.height * 0.06), cornerRadius: rect.height * 0.35)
+        context.fill(lips, with: .color(palette.gumDark))
         // Mouth interior.
         context.fill(Path(roundedRect: rect, cornerRadius: rect.height * 0.30), with: .color(palette.mouthInterior))
 
@@ -96,9 +94,7 @@ enum FrontMouth {
                 } else {
                     context.fill(tooth, with: .color(palette.toothDim))
                 }
-                if palette.detailed {
-                    context.stroke(tooth, with: .color(Color.black.opacity(0.10)), lineWidth: 1)
-                }
+                context.stroke(tooth, with: .color(Color.black.opacity(0.10)), lineWidth: 1)
             }
         }
     }
@@ -157,7 +153,7 @@ enum ArchMouth {
         return pts
     }
 
-    static func draw(in context: inout GraphicsContext, layout: Layout, zone: MouthZone, glow: Color, palette: DrawPalette) {
+    static func draw(in context: inout GraphicsContext, layout: Layout, zone: MouthZone, glow: Color, palette: DrawPalette = .standard) {
         // Soft gum arches behind the teeth.
         for upper in [true, false] {
             let c = upper ? layout.upperCentre : layout.lowerCentre
@@ -188,17 +184,15 @@ enum ArchMouth {
         if tongueActive {
             context.drawLayer { layer in
                 layer.addFilter(.shadow(color: glow.opacity(0.8), radius: 12))
-                layer.fill(tongue, with: .color(palette.detailed ? palette.tongue : palette.tongue.opacity(0.9)))
+                layer.fill(tongue, with: .color(palette.tongue))
             }
         } else {
-            context.fill(tongue, with: .color(palette.detailed ? palette.tongue.opacity(0.6) : palette.tongue))
+            context.fill(tongue, with: .color(palette.tongue.opacity(0.6)))
         }
-        if palette.detailed {
-            var midline = Path()
-            midline.move(to: CGPoint(x: layout.tongueRect.midX, y: layout.tongueRect.minY + layout.tongueRect.height * 0.15))
-            midline.addLine(to: CGPoint(x: layout.tongueRect.midX, y: layout.tongueRect.maxY - layout.tongueRect.height * 0.25))
-            context.stroke(midline, with: .color(palette.gumDark.opacity(0.6)), style: StrokeStyle(lineWidth: 2, lineCap: .round))
-        }
+        var midline = Path()
+        midline.move(to: CGPoint(x: layout.tongueRect.midX, y: layout.tongueRect.minY + layout.tongueRect.height * 0.15))
+        midline.addLine(to: CGPoint(x: layout.tongueRect.midX, y: layout.tongueRect.maxY - layout.tongueRect.height * 0.25))
+        context.stroke(midline, with: .color(palette.gumDark.opacity(0.6)), style: StrokeStyle(lineWidth: 2, lineCap: .round))
 
         // Teeth.
         for upper in [true, false] {
@@ -216,14 +210,12 @@ enum ArchMouth {
                 } else {
                     context.fill(tooth, with: .color(palette.toothDim))
                 }
-                if palette.detailed {
-                    context.stroke(tooth, with: .color(.black.opacity(0.10)), lineWidth: 1)
-                    if i < 3 || i >= teethPerArch - 3 {
-                        var fissure = Path()
-                        fissure.move(to: CGPoint(x: frame.minX + frame.width * 0.3, y: frame.midY))
-                        fissure.addLine(to: CGPoint(x: frame.maxX - frame.width * 0.3, y: frame.midY))
-                        context.stroke(fissure, with: .color(.black.opacity(0.12)), lineWidth: 1)
-                    }
+                context.stroke(tooth, with: .color(.black.opacity(0.10)), lineWidth: 1)
+                if i < 3 || i >= teethPerArch - 3 {
+                    var fissure = Path()
+                    fissure.move(to: CGPoint(x: frame.minX + frame.width * 0.3, y: frame.midY))
+                    fissure.addLine(to: CGPoint(x: frame.maxX - frame.width * 0.3, y: frame.midY))
+                    context.stroke(fissure, with: .color(.black.opacity(0.12)), lineWidth: 1)
                 }
             }
         }

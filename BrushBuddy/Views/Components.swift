@@ -169,34 +169,24 @@ struct RoundButtonStyle: ButtonStyle {
     }
 }
 
-/// The tooth that fronts the app. Refined: a clean glowing silhouette.
-/// Kids: the same tooth with a cheerful face.
+/// The cheerful tooth that fronts the app.
 struct ToothMascot: View {
     var size: CGFloat = 120
     var mood: Mood = .happy
-    @Environment(\.visualStyle) private var style
 
     enum Mood { case happy, sleepy, cheering }
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 1 / 30)) { context in
             let t = context.date.timeIntervalSinceReferenceDate
-            let kids = style == .kids
-            let bob = sin(t * (kids ? 2.2 : 1.6)) * size * (kids ? 0.03 : 0.015)
-            let squash = kids ? 1 + sin(t * 2.2) * 0.02 : 1
+            let bob = sin(t * 2.2) * size * 0.03
+            let squash = 1 + sin(t * 2.2) * 0.02
             ZStack {
                 ToothShape()
                     .fill(LinearGradient(colors: [.white, Color(red: 0.78, green: 0.86, blue: 0.97)], startPoint: .topLeading, endPoint: .bottomTrailing))
-                    .shadow(color: (kids ? Theme.kidsPink : Theme.accent).opacity(mood == .cheering ? 0.6 : 0.35), radius: size * 0.2, y: size * 0.05)
-                if kids {
-                    ToothShape().stroke(Color(red: 0.55, green: 0.66, blue: 0.78), lineWidth: size * 0.025)
-                    face
-                } else {
-                    ToothShape()
-                        .fill(LinearGradient(colors: [.white.opacity(0.7), .clear], startPoint: .top, endPoint: .center))
-                        .padding(size * 0.08)
-                        .blendMode(.plusLighter)
-                }
+                    .shadow(color: Theme.kidsPink.opacity(mood == .cheering ? 0.6 : 0.35), radius: size * 0.2, y: size * 0.05)
+                ToothShape().stroke(Color(red: 0.55, green: 0.66, blue: 0.78), lineWidth: size * 0.025)
+                face
             }
             .frame(width: size, height: size * 1.1)
             .scaleEffect(x: 1 / squash, y: squash)

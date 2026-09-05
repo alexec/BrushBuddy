@@ -158,20 +158,13 @@ struct SettingsView: View {
 
     private var feedbackSection: some View {
         @Bindable var store = store
-        return Section {
-            Toggle(isOn: $store.settings.kidsMode) {
-                Label("Kids mode", systemImage: "face.smiling.fill")
-            }
+        return Section("Feedback") {
             Toggle(isOn: $store.settings.soundEnabled) {
                 Label("Sounds", systemImage: "speaker.wave.2.fill")
             }
             Toggle(isOn: $store.settings.hapticsEnabled) {
                 Label("Haptics", systemImage: "iphone.radiowaves.left.and.right")
             }
-        } header: {
-            Text("Look & feel")
-        } footer: {
-            Text("Kids mode swaps in playful cartoon graphics — smiley teeth, puffed cheeks and rainbow confetti. The advice and timings stay the same.")
         }
     }
 
